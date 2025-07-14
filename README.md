@@ -31,7 +31,7 @@ Trước khi bắt đầu, hãy đảm bảo bạn đã cài đặt:
 1. Clone dự án
 
 ```bash
-git clone [đường-dẫn-repo-của-bạn]
+git clone https://github.com/phattran0505/edut-platform.git
 cd edu-platform/client
 ```
 
@@ -70,6 +70,6 @@ npm run dev
 Name: Trần Xuân Phát
 Phone: 0397192664
 Email: phattran052004@gmail.com
-Github: https://github.com/yourusername
-Linkedin: https://github.com/yourusername
+Github: https://github.com/phattran0505
+Linkedin: https://www.linkedin.com/in/phat-tran-10872831a
 ```
