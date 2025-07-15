@@ -17,7 +17,10 @@ const ChatBot = () => {
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
-  const selectedProduct = useSelector((state) => state.products.selectedProduct);
+  const inputRef = useRef(null);
+  const selectedProduct = useSelector(
+    (state) => state.products.selectedProduct
+  );
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -37,7 +40,9 @@ const ChatBot = () => {
     setInputMessage("");
     setIsTyping(true);
 
-    // Giả lập AI đang trả lời
+    inputRef.current?.focus();
+
+    // giả lập AI đang trả lời
     try {
       const response = await axios.post("/api/v1/chatbot", {
         message: inputMessage,
@@ -56,8 +61,13 @@ const ChatBot = () => {
     }
     setIsTyping(false);
   };
+
   return (
-    <div className={`chatbot-container ${selectedProduct ? 'sm:block hidden' : ''}`}>
+    <div
+      className={`chatbot-container ${
+        selectedProduct ? "sm:block hidden" : ""
+      }`}
+    >
       {/* chatbot button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -111,6 +121,7 @@ const ChatBot = () => {
             <div className="flex gap-2">
               <input
                 type="text"
+                ref={inputRef}
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Nhập tin nhắn..."

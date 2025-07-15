@@ -64,7 +64,11 @@ npm run dev
 
 </details>
 
-## 👨‍💻 Tác giả
+## Truy cập Website
+
+Ứng dụng đã được deploy tại địa chỉ: https://edu-platform-0505.netlify.app/
+
+## Tác giả
 
 ```bash
 Name: Trần Xuân Phát

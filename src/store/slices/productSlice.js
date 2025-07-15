@@ -42,6 +42,15 @@ const productSlice = createSlice({
       state.viewHistory = [course, ...state.viewHistory].slice(0, 8);
       localStorage.setItem("viewHistory", JSON.stringify(state.viewHistory));
     },
+    removeFromViewHistory: (state, action) => {
+      const courseId = action.payload;
+      state.viewHistory = state.viewHistory.filter(item => item.id !== courseId);
+      localStorage.setItem("viewHistory", JSON.stringify(state.viewHistory));
+    },
+    clearViewHistory: (state) => {
+      state.viewHistory = [];
+      localStorage.setItem("viewHistory", JSON.stringify([]));
+    },
     setCourses: (state, action) => {
       state.courses = action.payload;
       state.isCoursesLoaded = true;
@@ -55,6 +64,8 @@ export const {
   setPriceFilter,
   setSelectedProduct,
   updateViewHistory,
+  removeFromViewHistory,
+  clearViewHistory,
   setCourses,
 } = productSlice.actions;
 

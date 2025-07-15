@@ -8,6 +8,8 @@ import History from "./pages/History";
 import Suggestions from "./pages/Suggestions";
 import ChatBot from "./components/chat/ChatBot";
 import FooterInfo from "./components/layout/FooterInfo";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
@@ -23,6 +25,7 @@ const App = () => {
       <ChatBot />
       <FooterInfo />
       <Footer />
+      <ToastContainer />
     </div>
   );
 };
